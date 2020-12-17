@@ -37,6 +37,7 @@ defmodule NotFoundRoute.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
       {:phoenix, ">= 1.4.0"},
       {:phoenix_live_view, ">= 0.13.0"},
       {:floki, ">= 0.27.0", only: :test},
