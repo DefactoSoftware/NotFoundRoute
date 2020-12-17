@@ -1,0 +1,34 @@
+<div class="not-found-container">
+  <H1> Oh no!</h1>
+  <div class="not-found-panel">
+    <div class="panel-header">
+      <h2>Available routes</h2>
+    </div>
+    <%= form_for :search, "#", [phx_change: :search, phx_submit: :search], fn f ->  %>
+      <%= search_input(f, :keyword,  value: @keyword, autofocus: true, required: true, phx_debounce: 300) %>
+    <% end %>
+    <table class="standard-table">
+      <thead>
+        <tr class="table-sticky-top">
+          <th><a href="javascript:void(0);" phx-click="set-helper">Helper</a></th>
+          <th><a href="javascript:void(0);" phx-click="set-path">Path</a></th>
+          <th><a href="javascript:void(0);" phx-click="set-verb">Verb</a></th>
+          <th><a href="javascript:void(0);" phx-click="set-plug">Controller/Plug</a></th>
+          <th><a href="javascript:void(0);" phx-click="set-action">action</a></th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <%= for route <- @routes  do %>
+          <tr>
+            <td><div  class="helper" ><%= route.helper %></div></td>
+            <td><%= route.path %></td>
+            <td><%= route.verb %></td>
+            <td><%= route_plug(route.plug) %></td>
+            <td><%= plug_opts(route.plug_opts) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
