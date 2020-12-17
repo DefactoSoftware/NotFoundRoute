@@ -76,11 +76,17 @@ defmodule NotFoundRouteWeb.OverviewLive do
   def normalize(keyword), do: keyword |> String.trim() |> String.downcase()
 
   def searchable_fields("action"), do: [:plug_opts]
+  def searchable_fields(nil), do: @searchable_fields
 
-  def searchable_fields(action) when action in @searchable_fields,
-    do: [String.to_existing_atom(action)]
+  def searchable_fields(action) do
+    action = String.to_existing_atom(action)
 
-  def searchable_fields(_), do: @searchable_fields
+    if action in @searchable_fields do
+      [action]
+    else
+      @searchable_fields
+    end
+  end
 
   def new_input(input, action) do
     keyword =
