@@ -3,6 +3,7 @@
 Shows the routes in a (non umbrella) phoenix app with a live filter through all
 routes.
 
+![search](https://user-images.githubusercontent.com/1089927/102547581-b08ba000-40b9-11eb-83bd-5f72249e0999.gif)
 
 Needed to run:
   * Phoenix > 1.4
