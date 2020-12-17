@@ -1,5 +1,9 @@
 # NotFoundRoute
 
+Shows the routes in a (non umbrella) phoenix app with a live filter through all
+routes.
+
+
 Needed to run:
   * Phoenix > 1.4
   * LiveView (only needed for search)
@@ -17,7 +21,7 @@ end
 
 In `lib/my_app_web/router.ex`
 
-```
+```ex
 defmodule MyAppWeb.Router do
   # ...
   import NotFoundRouteWeb.Router

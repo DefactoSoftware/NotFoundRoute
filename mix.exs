@@ -1,16 +1,20 @@
 defmodule NotFoundRoute.MixProject do
   use Mix.Project
 
+  @version "0.0.1"
+
   def project do
     [
+      package: package(),
+      aliases: aliases(),
       app: :not_found_route,
-      version: "0.1.0",
+      name: "NotFoundRoute",
+      compilers: [:phoenix] ++ Mix.compilers(),
+      deps: deps(),
       elixir: "~> 1.7",
       elixirc_paths: elixirc_paths(Mix.env()),
-      compilers: [:phoenix] ++ Mix.compilers(),
-      start_permanent: Mix.env() == :prod,
-      aliases: aliases(),
-      deps: deps()
+      description: "Show all routes on accessing a non-existing route.",
+      version: @version
     ]
   end
 
@@ -45,15 +49,17 @@ defmodule NotFoundRoute.MixProject do
     ]
   end
 
-  # Aliases are shortcuts or tasks specific to the current project.
-  # For example, to install project dependencies and perform other setup tasks, run:
-  #
-  #     $ mix setup
-  #
-  # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     [
       setup: ["deps.get", "cmd npm install --prefix assets"]
+    ]
+  end
+
+  defp package do
+    [
+      maintainers: ["Marcel Horlings"],
+      licenses: ["MIT"],
+      links: %{github: "https://github.com/DefactoSoftware/NotFoundRoute"}
     ]
   end
 end
