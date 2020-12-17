@@ -1,3 +1,5 @@
+[![Hex pm](http://img.shields.io/hexpm/v/not_found_route.svg?style=flat)](https://hex.pm/packages/not_found_route)
+
 # NotFoundRoute
 
 Shows the routes in a (non umbrella) phoenix app with a live filter through all
@@ -16,7 +18,7 @@ Add to `mix.exs`
 ```ex
 def deps do
   # ...
-  {:not_found_route, path: " https://github.com/DefactoSoftware/NotFoundRoute.git"}
+  {:not_found_route, "0.0.1"}
 end
 ```
 
