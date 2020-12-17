@@ -5,7 +5,6 @@ defmodule NotFoundRouteWeb.OverviewLive do
 
   def routes do
     router = Module.concat(["#{Phoenix.base()}Web", "Router"])
-
     router.__routes__()
   end
 

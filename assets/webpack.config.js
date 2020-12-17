@@ -19,11 +19,10 @@ module.exports = (env, options) => {
     entry: {
       'app': glob.sync('./vendor/**/*.js').concat(['./js/app.js'])
     },
-    output: {
-      filename: '[name].js',
-      path: path.resolve(__dirname, '../priv/static/js'),
-      publicPath: '/js/'
-    },
+  output: {
+    filename: 'app.js',
+    path: path.resolve(__dirname, '../priv/static/js')
+  },
     devtool: devMode ? 'eval-cheap-module-source-map' : undefined,
     module: {
       rules: [
@@ -46,7 +45,6 @@ module.exports = (env, options) => {
     },
     plugins: [
       new MiniCssExtractPlugin({ filename: '../css/app.css' }),
-      new CopyWebpackPlugin([{ from: 'static/', to: '../' }])
     ]
     .concat(devMode ? [new HardSourceWebpackPlugin()] : [])
   }
