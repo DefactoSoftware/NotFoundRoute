@@ -1,7 +1,7 @@
 # NotFoundRoute
 
 Shows the routes in a (non umbrella) phoenix app with a live filter through all
-routes.
+routes. This is only enabled in `:dev` mode
 
 ![search](https://user-images.githubusercontent.com/1089927/102547581-b08ba000-40b9-11eb-83bd-5f72249e0999.gif)
 
