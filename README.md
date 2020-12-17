@@ -18,7 +18,7 @@ Add to `mix.exs`
 ```ex
 def deps do
   # ...
-  {:not_found_route, "0.0.1"}
+  {:not_found_route, "0.0.2"}
 end
 ```
 
