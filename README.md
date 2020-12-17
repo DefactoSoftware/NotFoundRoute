@@ -1,19 +1,29 @@
 # NotFoundRoute
 
-To start your Phoenix server:
+Needed to run:
+  * Phoenix > 1.4
+  * LiveView (only needed for search)
 
-  * Install dependencies with `mix deps.get`
-  * Install Node.js dependencies with `npm install` inside the `assets` directory
-  * Start Phoenix endpoint with `mix phx.server`
+# Install
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+Add to `mix.exs`
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+```ex
+def deps do
+  # ...
+  {:not_found_route, path: " https://github.com/DefactoSoftware/NotFoundRoute.git"}
+end
+```
 
-## Learn more
+In `lib/my_app_web/router.ex`
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+```
+defmodule MyAppWeb.Router do
+  # ...
+  import NotFoundRouteWeb.Router
+  # ...
+
+  # Add this as last route in the "/" scope
+  live_not_found()
+end
+```
