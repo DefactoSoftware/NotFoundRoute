@@ -65,13 +65,13 @@ defmodule NotFoundRouteWeb.OverviewLive do
   def search_input(input) do
     input
     |> normalize()
-    |> String.split(":")
+    |> String.split("#")
     |> action_keyword_return
   end
 
   def action_keyword_return([keyword]), do: {nil, keyword}
   def action_keyword_return([action, keyword]), do: {action, keyword}
-  def action_keyword_return([action | rest]), do: {action, Enum.join(rest, ":")}
+  def action_keyword_return([action | rest]), do: {action, Enum.join(rest, "#")}
 
   def normalize(keyword), do: keyword |> String.trim() |> String.downcase()
 
@@ -90,14 +90,14 @@ defmodule NotFoundRouteWeb.OverviewLive do
 
   def new_input(input, action) do
     keyword =
-      if String.contains?(input, ":") do
+      if String.contains?(input, "#") do
         {_, keyword} = search_input(input)
         keyword
       else
         input
       end
 
-    action <> ":" <> keyword
+    action <> "#" <> keyword
   end
 
   def plug_opts({type, path}), do: "#{type} #{path}"
