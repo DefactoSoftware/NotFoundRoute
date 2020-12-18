@@ -11,7 +11,7 @@ Needed to run:
   * Phoenix > 1.4
   * LiveView (only needed for search)
 
-# Install
+## Install
 
 Add to `mix.exs`
 
@@ -34,3 +34,11 @@ defmodule MyAppWeb.Router do
   live_not_found()
 end
 ```
+
+## Usage
+
+Go to a route that is not defined in the router, for example `/not-found`
+where a page comes up with all the routes available in your appp.
+
+Search works for each column, when clicking on a column search will work only
+for that column.
