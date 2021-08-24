@@ -43,8 +43,7 @@ defmodule NotFoundRouteWeb do
 
   def live_view do
     quote do
-      use Phoenix.LiveView,
-        layout: {NotFoundRouteWeb.LayoutView, "live.html"}
+      use Phoenix.LiveView, layout: {NotFoundRouteWeb.LayoutView, "live.html"}
 
       unquote(view_helpers())
     end

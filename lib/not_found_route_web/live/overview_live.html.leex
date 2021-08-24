@@ -7,14 +7,14 @@
     <%= form_for :search, "#", [phx_change: :search, phx_submit: :search], fn f ->  %>
       <%= search_input(f, :keyword,  value: @keyword, autofocus: true, required: true, phx_debounce: 300) %>
     <% end %>
-    <table class="standard-table">
+    <table class="standard-table not-found-table">
       <thead>
         <tr class="table-sticky-top">
-          <th><a href="javascript:void(0);" phx-click="set-helper">Helper</a></th>
-          <th><a href="javascript:void(0);" phx-click="set-path">Path</a></th>
-          <th><a href="javascript:void(0);" phx-click="set-verb">Verb</a></th>
-          <th><a href="javascript:void(0);" phx-click="set-plug">Controller/Plug</a></th>
-          <th><a href="javascript:void(0);" phx-click="set-action">action</a></th>
+          <th><a href="#" phx-click="set-helper">Helper</a></th>
+          <th><a href="#" phx-click="set-path">Path</a></th>
+          <th><a href="#" phx-click="set-verb">Verb</a></th>
+          <th><a href="#" phx-click="set-plug">Controller/Plug</a></th>
+          <th><a href="#" phx-click="set-action">action</a></th>
         </tr>
       </thead>
       <tbody>

@@ -9,7 +9,11 @@ defmodule NotFoundRouteWeb.OverviewLive do
   end
 
   def mount(_, _, socket) do
-    socket = socket |> assign(:routes, routes()) |> assign(:keyword, "")
+    socket =
+      socket
+      |> assign(:routes, routes())
+      |> assign(:keyword, "")
+
     {:ok, socket}
   end
 

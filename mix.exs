@@ -39,10 +39,9 @@ defmodule NotFoundRoute.MixProject do
     [
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
       {:phoenix, ">= 1.4.0"},
-      {:phoenix_live_view, ">= 0.13.0"},
+      {:phoenix_live_view, ">= 0.16.0"},
       {:floki, ">= 0.27.0", only: :test},
       {:phoenix_html, ">= 2.0.0"},
-      {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:telemetry_metrics, "~> 0.4"},
       {:telemetry_poller, "~> 0.4"},
       {:jason, "~> 1.0"},
